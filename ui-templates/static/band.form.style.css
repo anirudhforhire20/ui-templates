@@ -1,0 +1,120 @@
+.band-creator {
+    justify-content: center;
+    margin: 0px;
+}
+
+.form-page .band-img {
+    width: 100%;
+    height: 300px;
+    border-radius: 0%;
+    clip-path: none;
+}
+
+.suggestions {
+    position: absolute;
+    margin-top: 2px;
+    top: 100%;
+    width: 100%;
+    left: 0px;
+    background-color: rgb(240, 240, 240);
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-collection {
+    width: 300px;
+}
+
+.suggestions .user-collection {
+    padding: 5px;
+}
+
+.user .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.user .info span {
+    border: unset;
+    position: unset;
+    font-size: 12pt;
+    color: rgb(24, 24, 24);
+}
+
+.user {
+    width: 100%;
+    height: max-content;
+    margin: 3px;
+    padding: 3px;
+    background-color: rgb(151, 151, 151);
+    border: 1px solid black;
+}
+
+.user .info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    clip-path: none;
+    background-color: black;
+    margin: 0px;
+    margin-right: 5px;
+}
+
+.user .invited {
+    width: 75px;
+    height: 30px;
+    border-radius: 2px;
+    border: 2px solid blue;
+    color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: unset;
+    font-size: 12pt;
+}
+.genre-collection {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.genre-collection .genre {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: rgb(145, 145, 145);
+    color: black;
+}
+
+.genre>span {
+    color: black;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.band-about {
+    width: 50%;
+    height: 50%;
+    font-size: 16pt;
+    padding: 5px;
+}
+
+.genre-suggestion {
+    width: 100%;
+    font-size: 16pt;
+    color: black;
+    background-color: rgb(175, 175, 175);
+    margin-bottom: 2px;
+    cursor: pointer;
+}

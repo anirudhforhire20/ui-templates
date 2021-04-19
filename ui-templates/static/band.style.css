@@ -1,0 +1,114 @@
+.band-art {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.band-art .band-img {
+    width: 100%;
+    height: 300px;
+    background-color: black;
+}
+
+.band-art .title {
+    font-size: 64pt;
+}
+
+
+
+.band-graphic {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+
+.band-info {
+    grid-column: 1;
+    padding: 10px;
+    padding-left: 50px;
+}
+
+.band-info *{
+    color: rgb(48, 48, 48);
+}
+
+.band-info .sub-heading {
+    margin-bottom: 20px;
+    color: rgb(43, 43, 43);
+}
+
+.band-info .genre-info {
+    margin-top: 30px;
+}
+
+.band-info .genre-info .genre {
+    margin-bottom: 10px;
+}
+
+.member-list {
+    padding: 10px;
+    padding-left: 50px;
+}
+
+.member-list h1 {
+    color: rgb(48, 48, 48);
+    margin-bottom: 20px;
+}
+
+.member-list .list {
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.member-list .list>* {
+    flex: 1 1 80px;
+}
+
+.member-list .member {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.member-list .member img {
+    width: 100px;
+    height: 100px;
+    clip-path: circle(48%);
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+.member-list .member .name {
+    font-size: 16pt;
+    color: black;
+}
+
+.member-list .member .uname {
+    color: rgb(102, 102, 102);
+}
+
+.band .feed {
+    margin-top: 100px;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.band .feed h1 {
+    color: rgb(48, 48, 48);
+}
+
+.band .upcoming-events {
+    margin-left: 50px;
+    margin-bottom: 100px;
+}
+
+.upcoming-events h1 {
+    color: rgb(48, 48, 48);
+    margin-bottom: 20px;
+}

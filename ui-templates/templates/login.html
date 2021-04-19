@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/global.style.css">
+    <title>Login | Jam Session</title>
+</head>
+<body class="secondary" style="
+display: flex;
+    align-items: center;
+    justify-content: center;
+">
+    <header class="primary header">
+        <h1 class="tm-font">Lorem Ipsum</h1>
+        <a class="btn secondary" style="width: 85px; height: 36px; color: white;">Login</a>
+    </header>
+    <link rel="stylesheet" href="../static/form.style.css">
+    <form id="signup-form-1" class="flash-card form" method="POST" action="/auth/login">
+        <div class="form-pages">
+            <div id="page-1" class="form-page">
+                <legend>Join us now</legend>
+    
+                <input id="cors_token" name="cors_token" type="hidden" value="{{cors_token}}">
+                <fieldset id="uname">
+                    <input name="uname" type="text" placeholder=" ">
+                    <label>Username</label>
+                    <span>Enter your username</span>
+                </fieldset>
+    
+                <fieldset id="password">
+                    <input name="password" type="password" placeholder=" ">
+                    <label>Password</label>
+                    <span>Enter your password</span>
+                </fieldset>
+
+                <span id="client-check-err" style="color: red;"></span>
+    
+                <div class="btn-grp">
+                    <button class="btn primary form-submit" type="submit">Login</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+
+        document.getElementById('signup-form-1').onsubmit = async function(event) {
+            event.preventDefault();
+
+            //username check
+            let uname = document.querySelector('#uname').querySelector('input').value;
+            let unameMsg = document.querySelector('#uname').querySelector('span');
+            let unameCheck = await Username(uname);
+            console.log(unameCheck)
+            if(unameCheck.pass == false)
+            {
+                console.log(unameCheck.err);
+                unameMsg.style.color = '#ff0000';
+                unameMsg.innerText = unameCheck.err;
+            }
+
+            //password check
+            let password = document.querySelector('#password').querySelector('input').value;
+            let passwordMsg = document.querySelector('#password').querySelector('span');
+            let passwordCheck = Password(password);
+            if(passwordCheck.pass == false)
+            {
+                console.log(passwordCheck.err)
+                passwordMsg.style.color = '#ff0000';
+                passwordMsg.innerText = passwordCheck.err;
+            }
+
+            let xhr = new XMLHttpRequest();
+            let res = {}
+            xhr.onload = () => {
+                res = JSON.parse(xhr.responseText);
+                if(res.pass == false)
+                {
+                    document.getElementById('client-check-err').innerHTML = res.err;
+                }
+                else
+                {
+                    let pass = unameCheck.pass && passwordCheck.pass && res.pass;
+                    if(pass == true)
+                    {
+                        this.submit();
+                    }
+                }
+            }
+            xhr.open('POST', '/auth/check');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            let sendJSON = JSON.stringify({
+                "cors_token" : document.getElementById('cors_token').value,
+                "uname" : document.querySelector('#uname').querySelector('input').value,
+                "password" : document.querySelector('#password').querySelector('input').value
+            });
+            xhr.send(sendJSON);
+
+            // let pass = unameCheck.pass && passwordCheck.pass && await res.pass;
+            // if(pass == true)
+            // {
+            //     this.submit();
+            // }
+        }
+    </script>
+    <script src="../static/form.validators.js"></script>
+</body>
+</html>

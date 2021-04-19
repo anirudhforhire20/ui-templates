@@ -1,0 +1,84 @@
+* {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.primary {
+    background-color: #CB9A3B;
+}
+
+.secondary {
+    background-color: #232323;
+}
+
+.flash-card {
+    position: absolute;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #E7E7E7;
+    overflow: hidden;
+}
+
+.btn-grp {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn {
+    border-radius: 5px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.btn:active {
+    filter: brightness(80%);
+}
+
+@font-face {
+    font-family: 'Amplify';
+    src: url(./Amplify_PersonalUseOnly.ttf);
+}
+.tm-font {
+    font-family: 'Amplify';
+    font-size: 40pt;
+    font-weight: 100;
+}
+
+.header {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 50px;
+    padding: 2px;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    width: 75%;
+    height: max-content;
+    margin: 50px;
+    background-color: #B9B9B9;
+    padding: 10px;
+}

@@ -1,0 +1,125 @@
+.form {
+    position: absolute;
+    width: 520px;
+    height: 335px;
+}
+
+.form-pages {
+    width: fit-content;
+    position: relative;
+    left: -0px;
+    display: flex;
+    overflow: hidden;
+    transition: left 250ms ease-out;
+}
+.form-page {
+    width: 100%;
+    height: 100%;
+    margin-left: 35px;
+    margin-right: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-page legend {
+    font-size: 36px;
+    margin: 12px;
+}
+
+.form-page fieldset {
+    position: relative;
+    width: 403px;
+    height: 70px;
+    margin: 12px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 1px 20px 3px rgba(0, 0, 0, 0.25);
+}
+
+.form-page fieldset input {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    padding-left: 6px;
+    border-radius: 5px;
+    font-size: 18pt;
+}
+
+.form-page fieldset label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: rgb(73, 73, 73);
+    padding: 3px;
+    font-size: 16pt;
+}
+
+.form-page fieldset input:placeholder-shown ~ label {
+    top: 18px;
+    color: rgb(0, 0, 0);
+    font-size: 18pt;
+    left: 0px;
+    transition: font-size 100ms;
+    transition: color 100ms;
+    transition: top 200ms;
+}
+
+.form-page fieldset input:focus ~ label {
+    top: 0px;
+    color: rgb(73, 73, 73);
+    font-size: 16pt;
+}
+
+.form-page fieldset span {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 90%;
+    height: 18px;
+    margin: 2px;
+    border-top: 2px solid rgb(109, 109, 109);
+    color: gray;
+    font-size: 10pt;
+}
+
+.form-page fieldset input:placeholder-shown ~ span {
+    color: white;
+}
+
+.form-page fieldset input:focus ~ span {
+    color: gray;
+}
+
+.form-page fieldset .err {
+    color: red;
+}
+
+.form-page .form-submit {
+    margin: 12px;
+    width: 85px;
+    height: 36px;
+    color: white;
+}
+
+.form-page img {
+    margin: 12px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    clip-path: circle(50%);
+    background-color: black;
+}
+
+.form-page span {
+    bottom: 0px;
+    left: 0px;
+    width: 90%;
+    height: 18px;
+    margin: 2px;
+    color: gray;
+    font-size: 10pt;
+}
