@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "ui-templates",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
