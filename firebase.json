@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "ui-temps",
     "public": "ui-templates",
     "ignore": [
       "firebase.json",
