@@ -14,7 +14,7 @@ display: flex;
 ">
     <header class="primary header">
         <h1 class="tm-font">Lorem Ipsum</h1>
-        <a class="btn secondary" style="width: 85px; height: 36px; color: white;">Login</a>
+        <a href="./login.html" class="btn secondary" style="width: 85px; height: 36px; color: white;">Login</a>
     </header>
     <link rel="stylesheet" href="../static/form.style.css">
     <form id="signup-form-1" class="flash-card form" method="POST" action="/auth/signup">
@@ -95,7 +95,7 @@ display: flex;
 
                 <div class="btn-grp">
                     <button id="btn-1" class="btn primary form-submit" type="button">Back</button>
-                    <button id="btn-2" class="btn primary form-submit" type="submit">Signup</button>
+                    <a href="./band.public.html" id="btn-2" class="btn primary form-submit" type="submit">Signup</button>
                 </div>
             </div>
         </div>
@@ -154,92 +154,92 @@ display: flex;
 
 
 
-        document.getElementById('signup-form-1').onsubmit = async function(event) {
-            event.preventDefault();
+        // document.getElementById('signup-form-1').onsubmit = async function(event) {
+        //     event.preventDefault();
 
-            //name check
-            let name = document.querySelector('#name').querySelector('input').value;
-            let nameMsg = document.querySelector('#name').querySelector('span');
-            let nameCheck = Name(name);
-            console.log(nameCheck);
-            if(nameCheck.pass == false)
-            {
-                console.log(nameCheck.err)
-                nameMsg.style.color = '#ff0000';
-                nameMsg.innerText = nameCheck.err;
-            }
+        //     //name check
+        //     let name = document.querySelector('#name').querySelector('input').value;
+        //     let nameMsg = document.querySelector('#name').querySelector('span');
+        //     let nameCheck = Name(name);
+        //     console.log(nameCheck);
+        //     if(nameCheck.pass == false)
+        //     {
+        //         console.log(nameCheck.err)
+        //         nameMsg.style.color = '#ff0000';
+        //         nameMsg.innerText = nameCheck.err;
+        //     }
 
-            //email check
-            let email = document.querySelector('#email').querySelector('input').value;
-            let emailMsg = document.querySelector('#email').querySelector('span');
-            let emailCheck = Email(email);
-            if(emailCheck.pass == false)
-            {
-                console.log(emailCheck.err);
-                emailMsg.style.color = '#ff0000';
-                emailMsg.innerText = emailCheck.err;
-            }
+        //     //email check
+        //     let email = document.querySelector('#email').querySelector('input').value;
+        //     let emailMsg = document.querySelector('#email').querySelector('span');
+        //     let emailCheck = Email(email);
+        //     if(emailCheck.pass == false)
+        //     {
+        //         console.log(emailCheck.err);
+        //         emailMsg.style.color = '#ff0000';
+        //         emailMsg.innerText = emailCheck.err;
+        //     }
 
 
-            //username check
-            let uname = document.querySelector('#uname').querySelector('input').value;
-            let unameMsg = document.querySelector('#uname').querySelector('span');
-            let unameCheck = await Username(uname);
-            console.log(unameCheck)
-            if(unameCheck.pass == false)
-            {
-                console.log(unameCheck.err);
-                unameMsg.style.color = '#ff0000';
-                unameMsg.innerText = unameCheck.err;
-            }
+        //     //username check
+        //     let uname = document.querySelector('#uname').querySelector('input').value;
+        //     let unameMsg = document.querySelector('#uname').querySelector('span');
+        //     let unameCheck = await Username(uname);
+        //     console.log(unameCheck)
+        //     if(unameCheck.pass == false)
+        //     {
+        //         console.log(unameCheck.err);
+        //         unameMsg.style.color = '#ff0000';
+        //         unameMsg.innerText = unameCheck.err;
+        //     }
 
-            //password check
-            let password = document.querySelector('#password').querySelector('input').value;
-            let passwordMsg = document.querySelector('#password').querySelector('span');
-            let passwordCheck = Password(password);
-            if(passwordCheck.pass == false)
-            {
-                console.log(passwordCheck.err)
-                passwordMsg.style.color = '#ff0000';
-                passwordMsg.innerText = passwordCheck.err;
-            }
+        //     //password check
+        //     let password = document.querySelector('#password').querySelector('input').value;
+        //     let passwordMsg = document.querySelector('#password').querySelector('span');
+        //     let passwordCheck = Password(password);
+        //     if(passwordCheck.pass == false)
+        //     {
+        //         console.log(passwordCheck.err)
+        //         passwordMsg.style.color = '#ff0000';
+        //         passwordMsg.innerText = passwordCheck.err;
+        //     }
 
-            let xhr = new XMLHttpRequest();
-            let res = {};
-            xhr.onload = () => {
-                res = JSON.parse(xhr.responseText);
-                if(res.pass == false)
-                {
-                    document.getElementById('client-check-err').innerText = res.err;
-                }
-                else
-                {
-                    let pass = (nameCheck.pass && emailCheck.pass && unameCheck.pass && passwordCheck.pass && res.pass);
-                    if(pass == true)
-                    {
+        //     let xhr = new XMLHttpRequest();
+        //     let res = {};
+        //     xhr.onload = () => {
+        //         res = JSON.parse(xhr.responseText);
+        //         if(res.pass == false)
+        //         {
+        //             document.getElementById('client-check-err').innerText = res.err;
+        //         }
+        //         else
+        //         {
+        //             let pass = (nameCheck.pass && emailCheck.pass && unameCheck.pass && passwordCheck.pass && res.pass);
+        //             if(pass == true)
+        //             {
 
-                        console.log('submitting');
-                        document.getElementById('pfp').value = '';
-                        this.submit();
-                    }
-                }
-            }
-            xhr.open('POST', '/auth/check');
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify({
-                "cors_token" : document.getElementById('cors_token').value,
-                "email" : document.querySelector('#email').querySelector('input').value,
-                "uname" : document.querySelector('#uname').querySelector('input').value
-            }));
+        //                 console.log('submitting');
+        //                 document.getElementById('pfp').value = '';
+        //                 this.submit();
+        //             }
+        //         }
+        //     }
+        //     xhr.open('POST', '/auth/check');
+        //     xhr.setRequestHeader('Content-Type', 'application/json');
+        //     xhr.send(JSON.stringify({
+        //         "cors_token" : document.getElementById('cors_token').value,
+        //         "email" : document.querySelector('#email').querySelector('input').value,
+        //         "uname" : document.querySelector('#uname').querySelector('input').value
+        //     }));
 
-            // let pass = await (nameCheck.pass && emailCheck.pass && unameCheck.pass && passwordCheck.pass && await res.pass);
-            // console.log(await pass);
-            // if(await pass == true)
-            // {
-            //     console.log('submitting');
-            //     this.submit();
-            // }
-        }
+        //     // let pass = await (nameCheck.pass && emailCheck.pass && unameCheck.pass && passwordCheck.pass && await res.pass);
+        //     // console.log(await pass);
+        //     // if(await pass == true)
+        //     // {
+        //     //     console.log('submitting');
+        //     //     this.submit();
+        //     // }
+        // }
     </script>
     <script src="../static/form.validators.js"></script>
 </body>

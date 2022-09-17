@@ -14,7 +14,7 @@ display: flex;
 ">
     <header class="primary header">
         <h1 class="tm-font">Lorem Ipsum</h1>
-        <a class="btn secondary" style="width: 85px; height: 36px; color: white;">Login</a>
+        <a href="./signup.html" class="btn secondary" style="width: 85px; height: 36px; color: white;">Signup</a>
     </header>
     <link rel="stylesheet" href="../static/form.style.css">
     <form id="signup-form-1" class="flash-card form" method="POST" action="/auth/login">
@@ -38,72 +38,72 @@ display: flex;
                 <span id="client-check-err" style="color: red;"></span>
     
                 <div class="btn-grp">
-                    <button class="btn primary form-submit" type="submit">Login</button>
+                    <a href="./band.public.html" class="btn primary form-submit" type="button">Login</button>
                 </div>
             </div>
         </div>
     </form>
     <script>
 
-        document.getElementById('signup-form-1').onsubmit = async function(event) {
-            event.preventDefault();
+        // document.getElementById('signup-form-1').onsubmit = async function(event) {
+        //     event.preventDefault();
 
-            //username check
-            let uname = document.querySelector('#uname').querySelector('input').value;
-            let unameMsg = document.querySelector('#uname').querySelector('span');
-            let unameCheck = await Username(uname);
-            console.log(unameCheck)
-            if(unameCheck.pass == false)
-            {
-                console.log(unameCheck.err);
-                unameMsg.style.color = '#ff0000';
-                unameMsg.innerText = unameCheck.err;
-            }
+        //     //username check
+        //     let uname = document.querySelector('#uname').querySelector('input').value;
+        //     let unameMsg = document.querySelector('#uname').querySelector('span');
+        //     let unameCheck = await Username(uname);
+        //     console.log(unameCheck)
+        //     if(unameCheck.pass == false)
+        //     {
+        //         console.log(unameCheck.err);
+        //         unameMsg.style.color = '#ff0000';
+        //         unameMsg.innerText = unameCheck.err;
+        //     }
 
-            //password check
-            let password = document.querySelector('#password').querySelector('input').value;
-            let passwordMsg = document.querySelector('#password').querySelector('span');
-            let passwordCheck = Password(password);
-            if(passwordCheck.pass == false)
-            {
-                console.log(passwordCheck.err)
-                passwordMsg.style.color = '#ff0000';
-                passwordMsg.innerText = passwordCheck.err;
-            }
+        //     //password check
+        //     let password = document.querySelector('#password').querySelector('input').value;
+        //     let passwordMsg = document.querySelector('#password').querySelector('span');
+        //     let passwordCheck = Password(password);
+        //     if(passwordCheck.pass == false)
+        //     {
+        //         console.log(passwordCheck.err)
+        //         passwordMsg.style.color = '#ff0000';
+        //         passwordMsg.innerText = passwordCheck.err;
+        //     }
 
-            let xhr = new XMLHttpRequest();
-            let res = {}
-            xhr.onload = () => {
-                res = JSON.parse(xhr.responseText);
-                if(res.pass == false)
-                {
-                    document.getElementById('client-check-err').innerHTML = res.err;
-                }
-                else
-                {
-                    let pass = unameCheck.pass && passwordCheck.pass && res.pass;
-                    if(pass == true)
-                    {
-                        this.submit();
-                    }
-                }
-            }
-            xhr.open('POST', '/auth/check');
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            let sendJSON = JSON.stringify({
-                "cors_token" : document.getElementById('cors_token').value,
-                "uname" : document.querySelector('#uname').querySelector('input').value,
-                "password" : document.querySelector('#password').querySelector('input').value
-            });
-            xhr.send(sendJSON);
+        //     let xhr = new XMLHttpRequest();
+        //     let res = {}
+        //     xhr.onload = () => {
+        //         res = JSON.parse(xhr.responseText);
+        //         if(res.pass == false)
+        //         {
+        //             document.getElementById('client-check-err').innerHTML = res.err;
+        //         }
+        //         else
+        //         {
+        //             let pass = unameCheck.pass && passwordCheck.pass && res.pass;
+        //             if(pass == true)
+        //             {
+        //                 this.submit();
+        //             }
+        //         }
+        //     }
+        //     xhr.open('POST', '/auth/check');
+        //     xhr.setRequestHeader('Content-Type', 'application/json');
+        //     let sendJSON = JSON.stringify({
+        //         "cors_token" : document.getElementById('cors_token').value,
+        //         "uname" : document.querySelector('#uname').querySelector('input').value,
+        //         "password" : document.querySelector('#password').querySelector('input').value
+        //     });
+        //     xhr.send(sendJSON);
 
-            // let pass = unameCheck.pass && passwordCheck.pass && await res.pass;
-            // if(pass == true)
-            // {
-            //     this.submit();
-            // }
-        }
+        //     // let pass = unameCheck.pass && passwordCheck.pass && await res.pass;
+        //     // if(pass == true)
+        //     // {
+        //     //     this.submit();
+        //     // }
+        // }
     </script>
-    <script src="../static/form.validators.js"></script>
+    <!-- <script src="../static/form.validators.js"></script> -->
 </body>
 </html>
